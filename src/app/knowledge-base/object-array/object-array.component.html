@@ -1,0 +1,14 @@
+<h2 style="padding-top: 10px; padding-left: 10px;">Create object and push to Array..Object-array.ts</h2>
+<div class="form-group" style="padding-top: 5px;">
+  <label for="usr">Name:</label>
+  <input type="text" class="form-control" [(ngModel)]="name">
+</div>
+
+<div class="form-group" style="padding-top: 5px;">
+  <label for="pwd">Age:</label>
+  <input type="text" class="form-control" [(ngModel)]="age">
+</div>
+<div class="form-group" style="padding-top: 8px;">
+  <button type="button" class="btn btn-primary" (click)="addObject()">Add Object</button>
+  Output: {{usersArr | json}}
+</div>

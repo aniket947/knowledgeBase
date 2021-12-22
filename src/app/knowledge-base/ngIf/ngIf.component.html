@@ -1,0 +1,18 @@
+<h2 style="padding-top: 10px; padding-left: 10px;">*ngIf, *ngIfElse </h2>
+
+
+
+
+<button type="button" class="btn btn-primary" (click)="isOpen=!isOpen">*ngIf</button><br><br>
+<div *ngIf="isOpen">
+    ngif,ngfor,ngswitch are structural directive
+</div>
+
+
+<button type="button" class="btn btn-primary" (click)="onIfElseClick()">*ngIf and Else</button>
+<div *ngIf="isIfElseOpen; else elseBlock ">If Block </div>
+
+<ng-template #elseBlock>
+    <div>Else Block</div>
+</ng-template>
+
