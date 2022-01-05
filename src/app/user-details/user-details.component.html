@@ -84,30 +84,34 @@
         </div>
         <hr>
         <div class="row">
+            <div class="checkbox">
+                <label><input type="checkbox" (click)="copyTempAddress($event)"> Is this your permanant
+                    Address</label>
+            </div>
+            <hr>
             <div class="col-md-6">
                 <label>Permanant Address</label>
-                <div class="checkbox">
-                    <label><input type="checkbox" (click)="copyTempAddress($event)"> Is this your permanant
-                        Address</label>
-                </div>
-                <textarea name="message" rows="3" cols="4" class="form-control"
-                    [(ngModel)]="userAddr.perm.address"> </textarea>
+
+                <textarea name="message" rows="3" cols="4" class="form-control" [(ngModel)]="userAddr.perm.address"
+                    [disabled]="isTempPermAddSame"> </textarea>
             </div>
             <div class="col-md-6">
 
                 <label>State</label>
-                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.state">
+                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.state"
+                    [disabled]="isTempPermAddSame">
             </div>
         </div>
         <div class="row" style="padding-top: 10px;">
             <div class="col-md-6">
                 <label>City</label>
-                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.city">
+                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.city" [disabled]="isTempPermAddSame">
             </div>
             <div class="col-md-6">
 
                 <label>Pin Code</label>
-                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.pincode">
+                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.pincode"
+                    [disabled]="isTempPermAddSame">
             </div>
 
         </div>
@@ -122,7 +126,7 @@
             <div class="col-md-3">
                 Qualification
                 <div class="form-group">
-                    <select [(ngModel)]="qualificationObj.selectedQualification">
+                    <select [(ngModel)]="selectedQualification">
                         <option value="">Select Qualiication </option>
                         <option value="SSC">SSC</option>
                         <option value="HSC">HSC</option>
@@ -132,24 +136,51 @@
                     </select>
 
                 </div>
-                {{qualificationObj.selectedQualification}} Anjncj
             </div>
             <div class="col-md-3">
-                <label
-                    *ngIf="qualificationObj.selectedQualification=='SSC'|| qualificationObj.selectedQualification=='HSC'">Board</label>
-                <label
-                    *ngIf="!(qualificationObj.selectedQualification=='SSC'|| qualificationObj.selectedQualification=='HSC')">University</label>
-                <input type="text" class="form-control" [(ngModel)]="qualificationObj.selectedBoard">
+                <label *ngIf="selectedQualification=='SSC'|| selectedQualification=='HSC'">Board</label>
+                <label *ngIf="!(selectedQualification=='SSC'|| selectedQualification=='HSC')">University</label>
+                <input type="text" class="form-control" [(ngModel)]="selectedBoard">
             </div>
             <div class="col-md-3">
                 <label>Percentage/CGPA</label>
-                <input type="text" class="form-control" [(ngModel)]="qualificationObj.selectedpercentage">
+                <input required type="text" class="form-control" [(ngModel)]="selectedpercentage">
+
             </div>
             <div class="col-md-3">
                 <label>buttons</label><br>
-                <button type="button" (click)="addQualificationDetails()" class="btn btn-primary">Add
+                <button type="button" (click)="addQualification()"  class="btn btn-primary" *ngIf="!isEditClicked">Add
                     Qualiication</button>
+                <button type="button" (click)="updateQualification()" class="btn btn-primary"
+                    *ngIf="isEditClicked">Update
+                    Qualiication</button>
+
             </div>
+        </div>
+
+        <div class="row" *ngIf="educationDetails.length > 0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Qualiication</th>
+                        <th>Board/University</th>
+                        <th>Percentage/CGPA</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let record of educationDetails;let selectedPosition=index">
+                        <td>{{record.userqualification}}</td>
+                        <td>{{record.userboard}}</td>
+                        <td>{{record.userpercentage}}</td>
+                        <td><button (click)="editUserQuali(record,selectedPosition)"
+                                class="btn btn-primary">Edit</button></td>
+                        <td><button (click)="deleteUserQuali(selectedPosition)" [disabled]="isEditClicked"
+                                class="btn btn-primary">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
