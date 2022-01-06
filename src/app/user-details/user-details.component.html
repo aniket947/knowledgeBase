@@ -78,7 +78,7 @@
             <div class="col-md-6">
 
                 <label>Pin Code</label>
-                <input type="text" class="form-control" [(ngModel)]="userAddr.temp.pincode">
+                <input type="number" class="form-control" [(ngModel)]="userAddr.temp.pincode">
             </div>
 
         </div>
@@ -110,7 +110,7 @@
             <div class="col-md-6">
 
                 <label>Pin Code</label>
-                <input type="text" class="form-control" [(ngModel)]="userAddr.perm.pincode"
+                <input type="number" class="form-control" [(ngModel)]="userAddr.perm.pincode"
                     [disabled]="isTempPermAddSame">
             </div>
 
@@ -128,11 +128,8 @@
                 <div class="form-group">
                     <select [(ngModel)]="selectedQualification">
                         <option value="">Select Qualiication </option>
-                        <option value="SSC">SSC</option>
-                        <option value="HSC">HSC</option>
-                        <option value="Diploma">Diploma</option>
-                        <option value="Graduate">Gratuate</option>
-                        <option value="Post Graduate">Post Graduate</option>
+                        <option *ngFor="let qualification of qualifications">{{qualification}}</option>
+                       
                     </select>
 
                 </div>
@@ -144,7 +141,7 @@
             </div>
             <div class="col-md-3">
                 <label>Percentage/CGPA</label>
-                <input required type="text" class="form-control" [(ngModel)]="selectedpercentage">
+                <input  type="number" class="form-control" [(ngModel)]="selectedpercentage">
 
             </div>
             <div class="col-md-3">
@@ -175,7 +172,7 @@
                         <td>{{record.userpercentage}}</td>
                         <td><button (click)="editUserQuali(record,selectedPosition)"
                                 class="btn btn-primary">Edit</button></td>
-                        <td><button (click)="deleteUserQuali(selectedPosition)" [disabled]="isEditClicked"
+                        <td><button (click)="deleteUserQuali(record,selectedPosition)" [disabled]="isEditClicked"
                                 class="btn btn-primary">Delete</button>
                         </td>
                     </tr>

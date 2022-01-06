@@ -17,7 +17,7 @@ export class UserDetailsComponent implements OnInit {
     usermailId: '',
     userMobile: ''
   };
-  userAddr = {
+  userAddr = {                         // declare property in object of object...temp and perm objects in userAddr object
     temp: {
       state: '',
       city: '',
@@ -33,12 +33,13 @@ export class UserDetailsComponent implements OnInit {
   };
 
   isEditClicked: boolean = false;
-  selectedQualification = '';
-  selectedBoard = '';
-  selectedpercentage = '';
-  isTempPermAddSame: boolean = false;
-  educationDetails: any = []
-  
+  selectedQualification = '';          // declaration
+  selectedBoard = '';                  // declaration
+  selectedpercentage = '';             // declaration
+  isTempPermAddSame: boolean = false;  // for checkbox
+  educationDetails: any = [];          // array for adding educational details
+  qualifications: any = ['SSC', 'HSC', 'Diploma', 'Gratuate', 'Post Graduate'];   // qualification dropdown 
+
   editedPosition: number = -1;
   userqualification: string | undefined;
 
@@ -48,27 +49,33 @@ export class UserDetailsComponent implements OnInit {
   }
 
   addQualification() {
-    let recordFound = this.educationDetails.find((user: any) => {
-      return (user.userqualification===this.selectedQualification )
+
+    let recordFound = this.educationDetails.find((user: any) => {   // finds, if user adding same qualification
+      return (user.userqualification === this.selectedQualification)
     });
-    if(recordFound){
+    if (recordFound) {
       alert(this.selectedQualification + ' Qualification already added. Please select another Qualification ');
-      return ;
-    }
-    let validResult = this.validQualificationDetails();
-    if(!validResult){
       return;
     }
-    
+    let validResult = this.validQualificationDetails();   // validation...alert for  'please select qualification'
+    if (!validResult) {
+      return;
+    }
+
     console.log(recordFound);
 
-    if(validResult || recordFound===undefined) {                                    
+    if (validResult || recordFound === undefined) {
       const user = { userqualification: this.selectedQualification, userboard: this.selectedBoard, userpercentage: this.selectedpercentage };///// created objec here
-      this.educationDetails.push(user);
+      this.educationDetails.push(user);                   // push user object into array
+
+      let output = this.qualifications.filter((qualification: any) => {  
+        return (qualification != this.selectedQualification);             // filter qualifications except selected one
+      });
+      this.qualifications = output;
       this.resetVariables();
-      
+
     }
-    
+
   }
 
   updateQualification() {
@@ -76,12 +83,20 @@ export class UserDetailsComponent implements OnInit {
     if (validResult) {
       const user = { userqualification: this.selectedQualification, userboard: this.selectedBoard, userpercentage: this.selectedpercentage };///// created objec here
       this.educationDetails[this.editedPosition] = user;
+
+      let output = this.qualifications.filter((qualification: any) => {
+        return (qualification != this.selectedQualification);                 // filter qualifications except selected one
+      });
+      this.qualifications = output;
+
       this.resetVariables();
+      
     }
   }
 
-  deleteUserQuali(selectedPosition: any) {
-    this.educationDetails.splice(selectedPosition, 1);
+  deleteUserQuali(selectedRecord: any, selectedPosition: any) {
+    this.educationDetails.splice(selectedPosition, 1);               // delete qualification details
+    this.qualifications.push(this.selectedQualification);            // deleted qualification push to qualifications array
   }
 
   editUserQuali(selectedRecord: any, editedPosition: number) {        //editedposition = edit element position
@@ -91,6 +106,7 @@ export class UserDetailsComponent implements OnInit {
     this.selectedpercentage = selectedRecord.userpercentage;
     this.isEditClicked = true;
     this.editedPosition = editedPosition;
+    this.qualifications.push(this.selectedQualification);
   }
 
   resetVariables() {
@@ -100,7 +116,7 @@ export class UserDetailsComponent implements OnInit {
     this.isEditClicked = false;
     this.editedPosition = -1;
   }
-  validQualificationDetails(){
+  validQualificationDetails() {
     if (this.selectedQualification === '') {
       alert('Select Qualification');
       return false;
