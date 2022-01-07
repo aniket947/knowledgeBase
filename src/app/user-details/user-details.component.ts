@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetailsService } from '../services/user-details.service';
 
 @Component({
   selector: 'app-user-details',
@@ -43,11 +44,14 @@ export class UserDetailsComponent implements OnInit {
   editedPosition: number = -1;
   userqualification: string | undefined;
 
-  constructor() { }
-
+  constructor(private _msgService:UserDetailsService) { }
+  products=[];
   ngOnInit(): void {
+    this._msgService.states().subscribe(productData => {
+      this.products = productData;
+    });
   }
-
+ 
   addQualification() {
 
     let recordFound = this.educationDetails.find((user: any) => {   // finds, if user adding same qualification

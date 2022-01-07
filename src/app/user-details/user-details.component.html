@@ -65,10 +65,17 @@
                     [(ngModel)]="userAddr.temp.address"> </textarea>
             </div>
             <div class="col-md-6">
-
-                <label>State</label>
-                <input type="text" class="form-control" [(ngModel)]="userAddr.temp.state">
+                <div class="form-group">
+                    <label>State</label>
+                    <select [(ngModel)]="userAddr.temp.state">
+                        <option value="">Select State </option>
+                        <option *ngFor="let product of products">{{product}}</option>
+                       
+                    </select>
+    
+                </div>
             </div>
+            
         </div>
         <div class="row" style="padding-top: 10px;">
             <div class="col-md-6">
