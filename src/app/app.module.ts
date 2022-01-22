@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,13 +22,21 @@ import { IfComponent } from './knowledge-base/ngIf/ngIf.component';
 import { ForComponent } from './knowledge-base/ngFor/ngFor.component';
 import { ngSwitchComponent } from './knowledge-base/ngSwitch/ngSwitch.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-
-
-
-
+import { UxPipe } from './Pipes/ux.pipe';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { RedBlackDirective } from './custom-directives/redBlack.directive';
+import { ChildComponent } from './child/child.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardChildComponent } from './child/dashboard-child/dashboard-child';
 
 @NgModule({
   declarations: [
+    UxPipe,
+    FilterPipe,
+    DashboardComponent,
+    DashboardChildComponent,
+    ChildComponent,
+    RedBlackDirective,
     AppComponent,
     KnowledgeBaseComponent,
     ObjectArrayComponent,
@@ -38,7 +46,6 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     ngSwitchComponent,
     ArrayFindFilterSomeComponent,
     UserDetailsComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -51,9 +58,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
