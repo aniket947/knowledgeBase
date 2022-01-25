@@ -5,8 +5,7 @@ import { Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 })
 export class RedBlackDirective implements OnInit {
   constructor(private el: ElementRef) {
-    // el.nativeElement.style.color = 'green';
-    // console.log(el);
+    
   }
 
   ngOnInit() {

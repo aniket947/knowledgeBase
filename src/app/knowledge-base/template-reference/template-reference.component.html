@@ -1,0 +1,14 @@
+<h2 style="padding-top: 10px; padding-left: 10px;">Template-Reference Variable and Custom Directive, HostListener </h2>
+
+<input #get type="text" value="" name="" placeholder="Enter User name here"><br><br>
+
+<button type="button" class="btn btn-primary"  (click)="onAddUser(get)">Add user Name</button>&nbsp;
+
+
+      <strong>{{this.inputData | json}}</strong> 
+      <hr>
+
+      <b>Custom Directive:: app-RedBlack</b>
+
+      <input type="text" placeholder="Enter Mobile No." app-RedBlack /><br /><br />
+

@@ -28,6 +28,9 @@ import { RedBlackDirective } from './custom-directives/redBlack.directive';
 import { ChildComponent } from './child/child.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardChildComponent } from './child/dashboard-child/dashboard-child';
+import { TemplateReferenceComponent } from './knowledge-base/template-reference/template-reference.component';
+import { PipesComponent } from './knowledge-base/pipes/pipes.component';
+import { NgClassStyleComponent } from './knowledge-base/ng-class-style/ng-class-style.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { DashboardChildComponent } from './child/dashboard-child/dashboard-child
     ngSwitchComponent,
     ArrayFindFilterSomeComponent,
     UserDetailsComponent,
+    TemplateReferenceComponent,
+    PipesComponent,
+    NgClassStyleComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@
   <h2 class="container p-3">Dashboard</h2>
   <div class="row border border-danger p-3">
     <div *ngFor="let data of dataArr">
+      
       <app-dashboard-child
         [myValue]="data"
         class="card text-white bg-primary mb-3"

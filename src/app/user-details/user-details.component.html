@@ -3,105 +3,52 @@
   <div class="row border border-danger p-3">
     <div class="col-md-6">
       <label>First Name</label>
-      <input
-        type="text"
-        class="form-control"
-        name="fullName"
-        [(ngModel)]="userObj.firstName"
-      /><br />
+      <input type="text" class="form-control" name="fullName" [(ngModel)]="userObj.firstName" /><br />
 
       <label>Middle Name</label>
-      <input
-        type="text"
-        class="form-control"
-        name="fullName"
-        [(ngModel)]="userObj.middleName"
-      /><br />
+      <input type="text" class="form-control" name="fullName" [(ngModel)]="userObj.middleName" /><br />
 
       <label>Last Name</label>
-      <input
-        type="text"
-        class="form-control"
-        name="fullName"
-        [(ngModel)]="userObj.lastName"
-      /><br />
+      <input type="text" class="form-control" name="fullName" [(ngModel)]="userObj.lastName" /><br />
       <label>Age</label>
-      <input
-        type="number"
-        class="form-control"
-        name="fullName"
-        [(ngModel)]="userObj.userAge"
-      />
+      <input type="number" class="form-control" name="fullName" [(ngModel)]="userObj.userAge" />
     </div>
     <div class="col-md-6">
       <div class="form-group">
         Gender<br /><br />
         <label class="radio-inline">
-          <input
-            type="radio"
-            name="gender"
-            value="male"
-            [(ngModel)]="userObj.userGender"
-          />
+          <input type="radio" name="gender" value="male" [(ngModel)]="userObj.userGender" />
           Male
-          <input
-            type="radio"
-            name="gender"
-            value="female"
-            [(ngModel)]="userObj.userGender"
-          />
+          <input type="radio" name="gender" value="female" [(ngModel)]="userObj.userGender" />
           Female
         </label>
       </div>
       <br />
       <div class="form-group">
         <label for="dateOfBirth">Date of Birth</label>
-        <input
-          id="dateOfBirth"
-          name="dateOfBirth"
-          type="date"
-          class="form-control"
-          [(ngModel)]="userObj.userDob"
-        />
+        <input id="dateOfBirth" name="dateOfBirth" type="date" class="form-control" [(ngModel)]="userObj.userDob" />
       </div>
       <br />
       <div class="form-group">
         <label>Email id</label>
-        <input
-          type="text"
-          class="form-control"
-          name="fullName"
-          [(ngModel)]="userObj.usermailId"
-        />
+        <input type="text" class="form-control" name="fullName" [(ngModel)]="userObj.usermailId" />
       </div>
       <br />
       <div class="form-group">
         <label>Mobile No</label>
-        <input
-          type="number"
-          class="form-control"
-          name="fullName"
-          [(ngModel)]="userObj.userMobile"
-        />
+        <input type="number" class="form-control" name="fullName" [(ngModel)]="userObj.userMobile" />
       </div>
       <br />
       <div class="form-group">
-        <select
-          name="marital_status"
-          id="marital_status"
-          [(ngModel)]="userObj.userMarriedStatus"
-        >
-          <option value="">-Select Marital Status-</option>
+        <select name="marital_status" id="marital_status" [(ngModel)]="userObj.userMarriedStatus">
+          <option value="">Select Marital Status-</option>
           <option value="Single">Single</option>
           <option value="Married">Married</option>
           <option value="Divorced">Divorced</option>
         </select>
       </div>
       <br />
-      <button
-        (click)="saveUserInfo()"
-        class="btn btn-primary width-2px height 4px,float-right"
-      >
+      <button (click)="saveUserInfo()" class="btn btn-primary width-2px height 4px,float-right">
         Save
       </button>
     </div>
@@ -113,13 +60,7 @@
     <div class="row">
       <div class="col-md-6">
         <label>Temporary Address </label>
-        <textarea
-          name="message"
-          rows="3"
-          cols="4"
-          class="form-control"
-          [(ngModel)]="userAddr.temp.address"
-        >
+        <textarea name="message" rows="3" cols="4" class="form-control" [(ngModel)]="userAddr.temp.address">
         </textarea>
       </div>
       <div class="col-md-6">
@@ -135,71 +76,40 @@
     <div class="row" style="padding-top: 10px;">
       <div class="col-md-6">
         <label>City</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="userAddr.temp.city"
-        />
+        <input type="text" class="form-control" [(ngModel)]="userAddr.temp.city" />
       </div>
       <div class="col-md-6">
         <label>Pin Code</label>
-        <input
-          type="number"
-          class="form-control"
-          [(ngModel)]="userAddr.temp.pincode"
-        />
+        <input type="number" class="form-control" [(ngModel)]="userAddr.temp.pincode" />
       </div>
     </div>
     <hr />
     <div class="row">
       <div class="checkbox">
-        <label
-          ><input type="checkbox" (click)="copyTempAddress($event)" /> Is this
-          your permanant Address</label
-        >
+        <label><input type="checkbox" (click)="copyTempAddress($event)" /> Is this
+          your permanant Address</label>
       </div>
       <hr />
       <div class="col-md-6">
         <label>Permanant Address</label>
 
-        <textarea
-          name="message"
-          rows="3"
-          cols="4"
-          class="form-control"
-          [(ngModel)]="userAddr.perm.address"
-          [disabled]="isTempPermAddSame"
-        >
+        <textarea name="message" rows="3" cols="4" class="form-control" [(ngModel)]="userAddr.perm.address"
+          [disabled]="isTempPermAddSame">
         </textarea>
       </div>
       <div class="col-md-6">
         <label>State</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="userAddr.perm.state"
-          [disabled]="isTempPermAddSame"
-        />
+        <input type="text" class="form-control" [(ngModel)]="userAddr.perm.state" [disabled]="isTempPermAddSame" />
       </div>
     </div>
     <div class="row" style="padding-top: 10px;">
       <div class="col-md-6">
         <label>City</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="userAddr.perm.city"
-          [disabled]="isTempPermAddSame"
-        />
+        <input type="text" class="form-control" [(ngModel)]="userAddr.perm.city" [disabled]="isTempPermAddSame" />
       </div>
       <div class="col-md-6">
         <label>Pin Code</label>
-        <input
-          type="number"
-          class="form-control"
-          [(ngModel)]="userAddr.perm.pincode"
-          [disabled]="isTempPermAddSame"
-        />
+        <input type="number" class="form-control" [(ngModel)]="userAddr.perm.pincode" [disabled]="isTempPermAddSame" />
       </div>
     </div>
   </div>
@@ -222,44 +132,24 @@
         </div>
       </div>
       <div class="col-md-3">
-        <label
-          *ngIf="
+        <label *ngIf="
             selectedQualification == 'SSC' || selectedQualification == 'HSC'
-          "
-          >Board</label
-        >
-        <label
-          *ngIf="
+          ">Board</label>
+        <label *ngIf="
             !(selectedQualification == 'SSC' || selectedQualification == 'HSC')
-          "
-          >University</label
-        >
+          ">University</label>
         <input type="text" class="form-control" [(ngModel)]="selectedBoard" />
       </div>
       <div class="col-md-3">
         <label>Percentage/CGPA</label>
-        <input
-          type="number"
-          class="form-control"
-          [(ngModel)]="selectedpercentage"
-        />
+        <input type="number" class="form-control" [(ngModel)]="selectedpercentage" />
       </div>
       <div class="col-md-3">
         <label>buttons</label><br />
-        <button
-          type="button"
-          (click)="addQualification()"
-          class="btn btn-primary"
-          *ngIf="!isEditClicked"
-        >
+        <button type="button" (click)="addQualification()" class="btn btn-primary" *ngIf="!isEditClicked">
           Add Qualiication
         </button>
-        <button
-          type="button"
-          (click)="updateQualification()"
-          class="btn btn-primary"
-          *ngIf="isEditClicked"
-        >
+        <button type="button" (click)="updateQualification()" class="btn btn-primary" *ngIf="isEditClicked">
           Update Qualiication
         </button>
       </div>
@@ -276,29 +166,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            *ngFor="
+          <tr *ngFor="
               let record of educationDetails;
               let selectedPosition = index
-            "
-          >
+            ">
             <td>{{ record.userqualification }}</td>
             <td>{{ record.userboard }}</td>
             <td>{{ record.userpercentage }}</td>
             <td>
-              <button
-                (click)="editUserQuali(record, selectedPosition)"
-                class="btn btn-primary"
-              >
+              <button (click)="editUserQuali(record, selectedPosition)" class="btn btn-primary">
                 Edit
               </button>
             </td>
             <td>
-              <button
-                (click)="deleteUserQuali(record, selectedPosition)"
-                [disabled]="isEditClicked"
-                class="btn btn-primary"
-              >
+              <button (click)="deleteUserQuali(record, selectedPosition)" [disabled]="isEditClicked"
+                class="btn btn-primary">
                 Delete
               </button>
             </td>
@@ -309,12 +191,9 @@
   </div>
   <br /><br />
 
-  <strong>PIPES</strong>
+  
 
-  <h4>{{ value | uxpipe }}</h4>
-  <!-- <h1 app-RedBlack>this is testing site please check wwwwww.ww</h1> -->
-
-  <input type="text" placeholder="Enter Mobile No." app-RedBlack /><br /><br />
+  
 
   <!-- <input type="text" [(ngModel)]="userNames" /> Parent to child -->
 
@@ -327,45 +206,6 @@
     Remove Component
   </button>
 
-   <app-child *ngIf="childExist" [myValue]="uservalue" [num]="ipnum"></app-child> 
+  <app-child *ngIf="childExist" [myValue]="uservalue" [num]="ipnum"></app-child>
 </div>
 
-<div class="container">
-  <h2 class="container p-3">Filter Pipes</h2>
-
-  <div class="row border border-danger p-3">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            id="search"
-            placeholder="Search product by name"
-            [(ngModel)]="nameSearch"
-          />
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Product</th>
-              <th scope="col">Price</th>
-              <th scope="col">Availability</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let product of productArr | filter: nameSearch">
-              <th scope="row">{{ product.sno }}</th>
-              <td>{{ product.name }}</td>
-              <td>{{ product.price }}</td>
-              <td>
-                <span>{{ product.availability }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>

@@ -22,46 +22,7 @@ export class UserDetailsComponent implements OnInit {
     this.uservalue = val.value;
   }
 
-  nameSearch: string = '';
-  productArr = [
-    {
-      sno: '1',
-      name: 'Mobile',
-      price: '10000',
-      availability: 'available',
-    },
-    {
-      sno: '2',
-      name: 'Laptop',
-      price: '50000',
-      availability: 'available',
-    },
-    {
-      sno: '3',
-      name: 'TV',
-      price: '20000',
-      availability: 'not available',
-    },
-    {
-      sno: '4',
-      name: 'Washing machine',
-      price: '30000',
-      availability: 'available',
-    },
-    {
-      sno: '5',
-      name: 'bike',
-      price: '90000',
-      availability: 'not available',
-    },
-    {
-      sno: '6',
-      name: 'car',
-      price: '100000',
-      availability: 'available',
-    },
-  ];
-
+  
   userObj = {
     // declare property in object
     userMarriedStatus: '',
@@ -121,13 +82,13 @@ export class UserDetailsComponent implements OnInit {
       // finds, if user adding same qualification
       return user.userqualification === this.selectedQualification;
     });
-    if (recordFound) {
-      alert(
-        this.selectedQualification +
-          ' Qualification already added. Please select another Qualification '
-      );
-      return;
-    }
+    // if (recordFound) {
+    //   alert(
+    //     this.selectedQualification +
+    //       ' Qualification already added. Please select another Qualification '
+    //   );
+    //   return;
+    // }
     let validResult = this.validQualificationDetails(); // validation...alert for  'please select qualification'
     if (!validResult) {
       return;
@@ -177,7 +138,6 @@ export class UserDetailsComponent implements OnInit {
 
   editUserQuali(selectedRecord: any, editedPosition: number) {
     //editedposition = edit element position
-    console.log(selectedRecord);
     this.selectedQualification = selectedRecord.userqualification;
     this.selectedBoard = selectedRecord.userboard;
     this.selectedpercentage = selectedRecord.userpercentage;

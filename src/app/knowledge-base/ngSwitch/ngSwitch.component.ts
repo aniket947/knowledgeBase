@@ -18,9 +18,7 @@ export class ngSwitchComponent implements OnInit {
  selectedProduct!: string;
 
   getProductVal(val: any){
-    console.log(val.target.value);
     this.selectedProduct=val.target.value;
   }
 
-  
 }
