@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ViewChildComponent } from './view-child/view-child.component';
 
 @Component({
   selector: 'app-knowledge-base',
@@ -7,21 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowledgeBaseComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('box') box:any=ElementRef;
 
-  // name: string = "";
-  // age: number = 0;
-  // usersArr: any = []; ////////declare global array
+
+@ViewChild(ViewChildComponent) child:any=ViewChildComponent
+
+  constructor(private renderer:Renderer2) { }
+
+
 
   ngOnInit(): void {
+    // console.log(this.box);
   }
 
-  // addObject() {
-   
+ngAfterViewInit(){
 
-  //   const user = { username: this.name, userage: this.age };///// created objec here
-  //   this.usersArr.push(user);   ///////// push created object in array
-  //   console.log(this.usersArr);
-  // }
+  this.renderer.setStyle(this.box.nativeElement,'backgroundColor','green')
+  console.log(this.box);
+  // this.box.nativeElement.style.backgroundColor="green";
+
+
+ 
+//  console.log(this.child)  
+}
+
+
+  changeChildProperty(){
+this.child.userName="Aniket";
+  }
+
+  callChildMethod(){
+this.child.clickHere();
+  }
+  
 
 }

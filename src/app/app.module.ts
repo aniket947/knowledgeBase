@@ -31,6 +31,12 @@ import { DashboardChildComponent } from './child/dashboard-child/dashboard-child
 import { TemplateReferenceComponent } from './knowledge-base/template-reference/template-reference.component';
 import { PipesComponent } from './knowledge-base/pipes/pipes.component';
 import { NgClassStyleComponent } from './knowledge-base/ng-class-style/ng-class-style.component';
+import { ViewChildComponent } from './knowledge-base/view-child/view-child.component';
+import { HostListenerComponent } from './knowledge-base/host-listener/host-listener.component';
+import { DataSharingViaServiceComponent } from './knowledge-base/data-sharing-via-service/data-sharing-via-service.component';
+import { KbChildComponent } from './knowledge-base/kb-child/kb-child.component';
+import { KbParentComponent } from './knowledge-base/kb-parent/kb-parent.component';
+import { DataSharingServiceService } from './services/data-sharing-service.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +58,11 @@ import { NgClassStyleComponent } from './knowledge-base/ng-class-style/ng-class-
     TemplateReferenceComponent,
     PipesComponent,
     NgClassStyleComponent,
+    ViewChildComponent,
+    HostListenerComponent,
+    DataSharingViaServiceComponent,
+    KbChildComponent,
+    KbParentComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +77,7 @@ import { NgClassStyleComponent } from './knowledge-base/ng-class-style/ng-class-
     MatIconModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [DataSharingServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -199,13 +199,15 @@
 
   <!-- <app-child [placeholderText]="userNames"> </app-child>  -->
 
-  <input type="text" #val />
+  <input type="text" #val />&nbsp;
   <button (click)="submitValue(val)" class="btn btn-primary">Add</button>
   &NonBreakingSpace;
   <button (click)="childDestroy()" class="btn btn-primary">
     Remove Component
-  </button>
+  </button>&nbsp;
+  <b>{{property}}</b>                          
+<app-child  (property)="parentFunction($event)"></app-child>       
 
-  <app-child *ngIf="childExist" [myValue]="uservalue" [num]="ipnum"></app-child>
+  <!-- <app-child *ngIf="childExist" [myValue]="uservalue" [num]="ipnum"></app-child> -->
 </div>
 

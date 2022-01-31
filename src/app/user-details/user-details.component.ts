@@ -14,12 +14,13 @@ export class UserDetailsComponent implements OnInit {
   childExist: boolean = true;
   counter: any;
   ipnum: number = 0;
+  property: any;
   childDestroy() {
     this.childExist = false;
   }
 
   submitValue(val: any) {
-    this.uservalue = val.value;
+    this.uservalue = this.userObj;
   }
 
   
@@ -72,8 +73,15 @@ export class UserDetailsComponent implements OnInit {
     });
     this.counter = setInterval(() => {
       this.ipnum = this.ipnum + 1;
+      // this.userObj.lastName=this.userObj.lastName + this.ipnum;
+      this.uservalue = this.userObj;
     }, 5000);
   }
+
+  parentFunction(event:any){
+this.property=event;          //@output
+  }
+
 
   value = 'this is test value';
 

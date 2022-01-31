@@ -54,3 +54,54 @@
 
   </div>
 </div>
+
+<hr>
+<div #box  class="container">
+<strong>Parent Component</strong>&nbsp;
+<button class="btn btn-primary" (click)="changeChildProperty()">Change Child Property User Name</button>&nbsp;
+<button class="btn btn-primary"(click)="callChildMethod()">Call Child Method</button>
+</div>
+
+<hr>
+
+
+<div class="container">
+  <div class="row" style="padding-top: 10px;" >
+
+      <div class="col-md-3" style="border:1px solid grey; height: 300px; border-radius: 5px; margin: 10px;">
+        <app-view-child></app-view-child>
+
+        
+      </div> 
+
+      <div class="col-md-3" style="border:1px solid grey; height: 300px; border-radius: 5px; margin: 10px;">
+        <app-host-listener></app-host-listener>
+      </div>
+      
+      <div class="col-md-3" style="border:1px solid grey; height: 300px; border-radius: 5px; margin: 10px;">
+       <app-data-sharing-via-service></app-data-sharing-via-service>
+      </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" style="padding-top: 10px;" >
+
+      <div class="col-md-3" style="border:1px solid grey; height: 300px; border-radius: 5px; margin: 10px;">
+        <app-kb-child></app-kb-child>
+
+        
+      </div> 
+
+      <div class="col-md-3" style="border:1px solid grey; height: 300px; border-radius: 5px; margin: 10px;">
+        <app-kb-parent></app-kb-parent>
+      </div>
+      
+      <div class="col-md-3" style="border:1px solid grey; height: 300px; border-radius: 5px; margin: 10px;">
+       Aniket
+      </div>
+
+  </div>
+</div>
+

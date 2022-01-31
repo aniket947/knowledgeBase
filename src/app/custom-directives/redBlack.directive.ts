@@ -9,7 +9,7 @@ export class RedBlackDirective implements OnInit {
   }
 
   ngOnInit() {
-    this.el.nativeElement.value.length = '';
+    this.el.nativeElement.value = '';
   }
 
   @HostListener('keyup') onkeyup() {
@@ -20,3 +20,4 @@ export class RedBlackDirective implements OnInit {
     }
   }
 }
+    

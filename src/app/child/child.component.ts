@@ -37,6 +37,14 @@ export class ChildComponent
   @Input() myValue = '';
   @Input() num: any;
 
+@Output() property= new EventEmitter();
+property2:string="Message from Child";
+sendData(){
+  this.property.emit(this.property2);         //@output
+}
+
+
+
   number: any;
   counter: any;
 
@@ -46,6 +54,7 @@ export class ChildComponent
 
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngonchanges call');
+    // this.num = this.num + 100;
   }
 
   ngDoCheck() {

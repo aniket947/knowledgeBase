@@ -3,8 +3,13 @@
   <div class="row border border-danger p-3">
     <!-- <input type="text" placeholder="{{ placeholderText }}" /> -->
     <div class="box">
-       Input value:<strong>{{ myValue }}</strong>
-      {{ num }} 
+
+      <button (click)="sendData()">Send Data from child to Parent</button>        <!--@output-->
+       <!-- Input value:<strong>{{ myValue | json }}</strong>
+      {{ num }}  -->
+
+      
     </div>
+    
   </div>
 </div>
