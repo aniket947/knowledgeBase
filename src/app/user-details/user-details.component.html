@@ -65,22 +65,28 @@
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>State</label>
+          <label>Country</label>
           <select [(ngModel)]="userAddr.temp.state">
-            <option value="">Select State</option>
-            <option *ngFor="let product of products">{{ product }}</option>
+            <option value="">Select Country</option>
+            <option *ngFor="let item of countryStates">{{ item.name }}</option>
           </select>
         </div>
       </div>
     </div>
     <div class="row" style="padding-top: 10px;">
-      <div class="col-md-6">
-        <label>City</label>
-        <input type="text" class="form-control" [(ngModel)]="userAddr.temp.city" />
-      </div>
+      
       <div class="col-md-6">
         <label>Pin Code</label>
         <input type="number" class="form-control" [(ngModel)]="userAddr.temp.pincode" />
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>States</label>
+          <select [(ngModel)]="userAddr.temp.city">
+            <option value="">Select States</option>
+            <option *ngFor="let item of countryStates">{{ item.name }}</option>
+          </select>
+        </div>
       </div>
     </div>
     <hr />

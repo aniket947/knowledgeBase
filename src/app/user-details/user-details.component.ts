@@ -15,6 +15,7 @@ export class UserDetailsComponent implements OnInit {
   counter: any;
   ipnum: number = 0;
   property: any;
+  countryStates: any;
   childDestroy() {
     this.childExist = false;
   }
@@ -66,10 +67,10 @@ export class UserDetailsComponent implements OnInit {
   product: any;
 
   constructor(private _msgService: UserDetailsService) {}
-  products = [];
+  products: any = [];
   ngOnInit(): void {
-    this._msgService.states().subscribe((productData) => {
-      this.products = productData;
+    this._msgService.countriesStates().subscribe((countriesStatesData) => {
+      this.countryStates = countriesStatesData.data; 
     });
     this.counter = setInterval(() => {
       this.ipnum = this.ipnum + 1;

@@ -9,21 +9,7 @@ export class UserDetailsService {
 
   constructor(private http: HttpClient) { }
 
-  states(): Observable<any> {
-    var heeaders = new HttpHeaders();
-    heeaders.append("X-CSCAPI-KEY", "API_KEY");
-    // var requestOptions = {
-    //   headers: headers
-    // };
-    var headers = new Headers();
-headers.append("X-CSCAPI-KEY", "API_KEY");
-
-var requestOptions = {
- method: 'GET',
- headers: headers,
- redirect: 'follow'
-};
-
-    return this.http.get('https://api.printful.com/countries',);
+  countriesStates(): Observable<any> {
+    return this.http.get('https://countriesnow.space/api/v0.1/countries/states');
   }
 }
