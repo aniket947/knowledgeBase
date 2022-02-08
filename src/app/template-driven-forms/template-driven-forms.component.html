@@ -1,0 +1,55 @@
+<div class="container">
+    <h2 class="container p-3">User Login</h2>
+    <div class="row border border-danger p-3">
+        <div class="row ">
+            <div class="col-md-6 text-left bg-white rounded shadow py-3">
+
+                <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+                    <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+                        <div class="form-group mb-3">
+                            <label for="userName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Enter Username"
+                                name="userName" [(ngModel)]="userName" required>
+                            <small *ngIf="userName">Your Username is {{userName}}</small>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label">Email id</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1"
+                                placeholder="Enter Email" name="email" ngModel required email #email="ngModel"
+                                [(ngModel)]="emailid">
+                            <small class="text-danger" *ngIf="!email.valid && email.touched">Please enter valid
+                                Email</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mb-3" for="course">Select Course</label>
+                        <select class="form-control mb-3" id="course" name="course" ngModel
+                            [(ngModel)]="selectedCourse">
+                            <option value="Angular">Angular</option>
+                            <option value="javascript">Javascript</option>
+                            <option value="css">CSS</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success" [disabled]="!myForm.valid ">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6 bg-white rounded shadow">
+                <h2>Form Data</h2>
+                <p>User Name:<strong>{{userName}}</strong></p>
+                <p>User Email:<strong>{{emailid}}</strong></p>
+                <p>User Course:<strong>{{selectedCourse}}</strong></p>
+            </div>
+        </div>
+
+        <div class="row  mt-3" *ngIf="submitted">
+            <div class="col-md-6 text-left bg-white rounded shadow">
+                <h2>Form Data</h2>
+                <p>User Name:<strong>{{FormData.userName}}</strong></p>
+                <p>User Email:<strong>{{FormData.email}}</strong></p>
+                <p>User Course:<strong>{{FormData.course}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>

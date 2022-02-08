@@ -37,6 +37,7 @@ import { DataSharingViaServiceComponent } from './knowledge-base/data-sharing-vi
 import { KbChildComponent } from './knowledge-base/kb-child/kb-child.component';
 import { KbParentComponent } from './knowledge-base/kb-parent/kb-parent.component';
 import { DataSharingServiceService } from './services/data-sharing-service.service';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { DataSharingServiceService } from './services/data-sharing-service.servi
     DataSharingViaServiceComponent,
     KbChildComponent,
     KbParentComponent,
+    TemplateDrivenFormsComponent,
   ],
   imports: [
     BrowserModule,
