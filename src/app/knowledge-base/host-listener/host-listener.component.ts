@@ -12,7 +12,6 @@ export class HostListenerComponent implements OnInit {
     console.log('hiiiiiiiiiiii')
     this.divHeight=50;
 
-
   }
 
   constructor() { }

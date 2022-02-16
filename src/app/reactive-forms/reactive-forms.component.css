@@ -1,0 +1,25 @@
+.ng-touched  {
+    border: 1px solid red;
+    box-shadow: 0 0 7px;
+}
+.btn-add{
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.596);
+}
+
+.btn-add i{
+    font-size: 25px;
+    line-height: 12px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-right: 3px;
+
+}
+
+.btn-add:hover{
+    border: 1px solid rgb(100, 100, 216);
+    background: rgb(243, 238, 238);
+    color: rgb(134, 134, 240);
+}

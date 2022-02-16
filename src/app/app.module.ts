@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ObjectArrayComponent } from './knowledge-base/object-array/object-array.component';
 import { ArrayForLoopComponent } from './knowledge-base/array-for-loop/array-for-loop.component';
 import { ArrayFindFilterSomeComponent } from './knowledge-base/find-filter-some/find-filter-some.component';
@@ -38,6 +38,9 @@ import { KbChildComponent } from './knowledge-base/kb-child/kb-child.component';
 import { KbParentComponent } from './knowledge-base/kb-parent/kb-parent.component';
 import { DataSharingServiceService } from './services/data-sharing-service.service';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
+import { NgContentCompComponent } from './ng-content-comp/ng-content-comp.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,9 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
     KbChildComponent,
     KbParentComponent,
     TemplateDrivenFormsComponent,
+    ReactiveFormsComponent,
+    NgContentComponent,
+    NgContentCompComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +84,7 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
     MatButtonModule,
     MatIconModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DataSharingServiceService],
   bootstrap: [AppComponent],
