@@ -41,6 +41,11 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { NgContentCompComponent } from './ng-content-comp/ng-content-comp.component';
+import { SubjectComponent } from './subject/subject.component';
+import { SubjectComp1Component } from './subject/subject-comp1/subject-comp1.component';
+import { SubjectComp2Component } from './subject/subject-comp2/subject-comp2.component';
+import { SubjectComp3Component } from './subject/subject-comp3/subject-comp3.component';
+import { SubjectComp4Component } from './subject/subject-comp4/subject-comp4.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +76,11 @@ import { NgContentCompComponent } from './ng-content-comp/ng-content-comp.compon
     ReactiveFormsComponent,
     NgContentComponent,
     NgContentCompComponent,
+    SubjectComponent,
+    SubjectComp1Component,
+    SubjectComp2Component,
+    SubjectComp3Component,
+    SubjectComp4Component,
   ],
   imports: [
     BrowserModule,
@@ -89,4 +99,8 @@ import { NgContentCompComponent } from './ng-content-comp/ng-content-comp.compon
   providers: [DataSharingServiceService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(){
+    console.log('app module loaded')
+  }
+}

@@ -9,7 +9,9 @@ export class NgContentComponent implements OnInit {
 
   statusOnline:boolean=true;
 
-  constructor() { }
+  constructor() { 
+    console.log('ngContent')
+  }
 
   ngOnInit(): void {
   }

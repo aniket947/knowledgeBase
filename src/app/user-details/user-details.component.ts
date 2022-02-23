@@ -16,6 +16,8 @@ export class UserDetailsComponent implements OnInit {
   ipnum: number = 0;
   property: any;
   countryStates: any;
+  States: any;
+  states: any;
   childDestroy() {
     this.childExist = false;
   }
@@ -24,7 +26,7 @@ export class UserDetailsComponent implements OnInit {
     this.uservalue = this.userObj;
   }
 
-  
+
   userObj = {
     // declare property in object
     userMarriedStatus: '',
@@ -66,12 +68,14 @@ export class UserDetailsComponent implements OnInit {
   fakeNameProp: any;
   product: any;
 
-  constructor(private _msgService: UserDetailsService) {}
+  constructor(private _msgService: UserDetailsService) { }
   products: any = [];
   ngOnInit(): void {
     this._msgService.countriesStates().subscribe((countriesStatesData) => {
-      this.countryStates = countriesStatesData.data; 
+      this.countryStates = countriesStatesData.data;
     });
+
+
     this.counter = setInterval(() => {
       this.ipnum = this.ipnum + 1;
       // this.userObj.lastName=this.userObj.lastName + this.ipnum;
@@ -79,8 +83,17 @@ export class UserDetailsComponent implements OnInit {
     }, 5000);
   }
 
-  parentFunction(event:any){
-this.property=event;          //@output
+  onCountryChange() {
+
+    let selectedCountryObject = this.countryStates.find((country: any) => {
+      return (country.name) == this.userAddr.temp.state;
+    })
+    this.states = selectedCountryObject.states;
+  }
+
+
+  parentFunction(event: any) {
+    this.property = event;          //@output
   }
 
 

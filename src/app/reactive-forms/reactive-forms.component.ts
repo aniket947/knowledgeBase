@@ -12,7 +12,9 @@ export class ReactiveFormsComponent implements OnInit {
   myReactiveForm: any = FormGroup;
   notAllowNames: any = ['Aniket', 'Mandle'];
 
-  constructor() { }
+  constructor() {
+    console.log('reactive')
+   }
 
   ngOnInit(): void {
     this.myReactiveForm = new FormGroup({

@@ -21,7 +21,9 @@ export class TemplateDrivenFormsComponent implements OnInit {
     course:'',
   }
 
-  constructor() { }
+  constructor() { 
+    console.log('template')
+  }
 
   ngOnInit(): void {
   }

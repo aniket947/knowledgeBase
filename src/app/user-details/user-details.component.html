@@ -66,15 +66,17 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Country</label>
-          <select [(ngModel)]="userAddr.temp.state">
+          <select (change)="onCountryChange()" [(ngModel)]="userAddr.temp.state">
             <option value="">Select Country</option>
             <option *ngFor="let item of countryStates">{{ item.name }}</option>
           </select>
         </div>
       </div>
     </div>
+
+
     <div class="row" style="padding-top: 10px;">
-      
+
       <div class="col-md-6">
         <label>Pin Code</label>
         <input type="number" class="form-control" [(ngModel)]="userAddr.temp.pincode" />
@@ -84,11 +86,12 @@
           <label>States</label>
           <select [(ngModel)]="userAddr.temp.city">
             <option value="">Select States</option>
-            <option *ngFor="let item of countryStates">{{ item.name }}</option>
+            <option *ngFor="let item of states">{{ item.name }}</option>
           </select>
         </div>
       </div>
     </div>
+
     <hr />
     <div class="row">
       <div class="checkbox">
@@ -197,9 +200,9 @@
   </div>
   <br /><br />
 
-  
 
-  
+
+
 
   <!-- <input type="text" [(ngModel)]="userNames" /> Parent to child -->
 
@@ -211,9 +214,8 @@
   <button (click)="childDestroy()" class="btn btn-primary">
     Remove Component
   </button>&nbsp;
-  <b>{{property}}</b>                          
-<app-child  (property)="parentFunction($event)"></app-child>       
+  <b>{{property}}</b>
+  <app-child (property)="parentFunction($event)"></app-child>
 
   <!-- <app-child *ngIf="childExist" [myValue]="uservalue" [num]="ipnum"></app-child> -->
 </div>
-
