@@ -46,6 +46,7 @@ import { SubjectComp1Component } from './subject/subject-comp1/subject-comp1.com
 import { SubjectComp2Component } from './subject/subject-comp2/subject-comp2.component';
 import { SubjectComp3Component } from './subject/subject-comp3/subject-comp3.component';
 import { SubjectComp4Component } from './subject/subject-comp4/subject-comp4.component';
+import { CSSComponent } from './css/css.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { SubjectComp4Component } from './subject/subject-comp4/subject-comp4.com
     SubjectComp2Component,
     SubjectComp3Component,
     SubjectComp4Component,
+    CSSComponent,
   ],
   imports: [
     BrowserModule,

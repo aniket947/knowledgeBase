@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CSSComponent } from './css/css.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GuardGuard } from './guard.guard';
 import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.component';
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   ] },
   { path: 'user-details', component: UserDetailsComponent },
   { path: 'template-driven-forms', component: TemplateDrivenFormsComponent },
+  { path: 'css', component: CSSComponent },
   { path: 'reactive-forms', component: ReactiveFormsComponent },
   { path: 'subject', component: SubjectComponent },
   { path: 'dashboard',canActivate:[GuardGuard], component: DashboardComponent },

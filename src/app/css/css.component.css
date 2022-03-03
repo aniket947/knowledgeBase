@@ -1,0 +1,39 @@
+.bg-blue{
+    background-color: aqua;
+    color:black;
+}
+
+h1,h2{
+    background-color: red;
+}
+div{
+    color: blue;
+}
+#red{
+    background-color: yellowgreen;
+}
+.selector{
+    background-color: chocolate;    
+    border: 2px solid black;
+}
+.image{
+    background-image: url('../../assets/images/photo.jpg');
+    background-repeat: repeat-x;
+}
+.box1{
+    /* display: inline-block; */
+    color: black;
+    background-color: aqua;
+    width: 300px;
+    text-transform: lowercase;
+    float: right  ;
+    justify-content: center;
+}
+.box2{
+    /* display: inline-block; */
+    color: blue;
+    background-color: rgb(228, 15, 15);
+    width: 500px;
+    justify-content: center;
+    
+}
