@@ -47,6 +47,7 @@ import { SubjectComp2Component } from './subject/subject-comp2/subject-comp2.com
 import { SubjectComp3Component } from './subject/subject-comp3/subject-comp3.component';
 import { SubjectComp4Component } from './subject/subject-comp4/subject-comp4.component';
 import { CSSComponent } from './css/css.component';
+import { CssFlipkartComponent } from './css-flipkart/css-flipkart.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { CSSComponent } from './css/css.component';
     SubjectComp3Component,
     SubjectComp4Component,
     CSSComponent,
+    CssFlipkartComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CssFlipkartComponent } from './css-flipkart/css-flipkart.component';
 import { CSSComponent } from './css/css.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GuardGuard } from './guard.guard';
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'subject', component: SubjectComponent },
   { path: 'dashboard',canActivate:[GuardGuard], component: DashboardComponent },
   { path: 'ng-content', component: NgContentComponent },
+  { path: 'css-flipkart', component: CssFlipkartComponent },
 ];
 
 @NgModule({
