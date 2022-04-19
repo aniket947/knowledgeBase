@@ -48,6 +48,9 @@ import { SubjectComp3Component } from './subject/subject-comp3/subject-comp3.com
 import { SubjectComp4Component } from './subject/subject-comp4/subject-comp4.component';
 import { CSSComponent } from './css/css.component';
 import { CssFlipkartComponent } from './css-flipkart/css-flipkart.component';
+import { PracticeComp1Component } from './knowledge-base/practice-comp1/practice-comp1.component';
+import { PracticeComp2Component } from './knowledge-base/practice-comp2/practice-comp2.component';
+import { PracticeServiceService } from './services/practice-service.service';
 
 @NgModule({
   declarations: [
@@ -85,6 +88,8 @@ import { CssFlipkartComponent } from './css-flipkart/css-flipkart.component';
     SubjectComp4Component,
     CSSComponent,
     CssFlipkartComponent,
+    PracticeComp1Component,
+    PracticeComp2Component,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +105,7 @@ import { CssFlipkartComponent } from './css-flipkart/css-flipkart.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataSharingServiceService],
+  providers: [DataSharingServiceService,PracticeServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {
